@@ -1,0 +1,9 @@
+C:\ML Training\LPRDetection\LPRDetection\bin\Debug\LPRDetection.exe.config
+C:\ML Training\LPRDetection\LPRDetection\bin\Debug\LPRDetection.exe
+C:\ML Training\LPRDetection\LPRDetection\bin\Debug\LPRDetection.pdb
+C:\ML Training\LPRDetection\LPRDetection\obj\Debug\LPRDetection.csprojAssemblyReference.cache
+C:\ML Training\LPRDetection\LPRDetection\obj\Debug\LPRDetection.Form1.resources
+C:\ML Training\LPRDetection\LPRDetection\obj\Debug\LPRDetection.Properties.Resources.resources
+C:\ML Training\LPRDetection\LPRDetection\obj\Debug\LPRDetection.csproj.GenerateResource.cache
+C:\ML Training\LPRDetection\LPRDetection\obj\Debug\LPRDetection.exe
+C:\ML Training\LPRDetection\LPRDetection\obj\Debug\LPRDetection.pdb
