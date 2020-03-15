@@ -1,0 +1,13 @@
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\bin\Debug\ExpenseTracker.exe.config
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\bin\Debug\ExpenseTracker.exe
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\bin\Debug\ExpenseTracker.pdb
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\obj\Debug\ExpenseTracker.csprojAssemblyReference.cache
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\obj\Debug\ExpenseTracker.frmGroup.resources
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\obj\Debug\ExpenseTracker.frmUsers.resources
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\obj\Debug\ExpenseTracker.Properties.Resources.resources
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\obj\Debug\ExpenseTracker.csproj.GenerateResource.cache
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\obj\Debug\ExpenseTracker.exe
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\obj\Debug\ExpenseTracker.pdb
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\obj\Debug\ExpenseTracker.frmUser.resources
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\obj\Debug\ExpenseTracker.frmExpenseReports.resources
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\ExpenseTracker\obj\Debug\ExpenseTracker.frmSplitExpense.resources
