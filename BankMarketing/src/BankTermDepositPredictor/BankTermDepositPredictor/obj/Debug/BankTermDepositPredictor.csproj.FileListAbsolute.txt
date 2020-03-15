@@ -1,0 +1,12 @@
+C:\GitHub\Projects\BankMarketing\src\BankTermDepositPredictor\BankTermDepositPredictor\bin\Debug\BankTermDepositPredictor.exe.config
+C:\GitHub\Projects\BankMarketing\src\BankTermDepositPredictor\BankTermDepositPredictor\bin\Debug\BankTermDepositPredictor.exe
+C:\GitHub\Projects\BankMarketing\src\BankTermDepositPredictor\BankTermDepositPredictor\bin\Debug\BankTermDepositPredictor.pdb
+C:\GitHub\Projects\BankMarketing\src\BankTermDepositPredictor\BankTermDepositPredictor\bin\Debug\Newtonsoft.Json.dll
+C:\GitHub\Projects\BankMarketing\src\BankTermDepositPredictor\BankTermDepositPredictor\bin\Debug\Newtonsoft.Json.xml
+C:\GitHub\Projects\BankMarketing\src\BankTermDepositPredictor\BankTermDepositPredictor\obj\Debug\BankTermDepositPredictor.csprojAssemblyReference.cache
+C:\GitHub\Projects\BankMarketing\src\BankTermDepositPredictor\BankTermDepositPredictor\obj\Debug\BankTermDepositPredictor.Form1.resources
+C:\GitHub\Projects\BankMarketing\src\BankTermDepositPredictor\BankTermDepositPredictor\obj\Debug\BankTermDepositPredictor.Properties.Resources.resources
+C:\GitHub\Projects\BankMarketing\src\BankTermDepositPredictor\BankTermDepositPredictor\obj\Debug\BankTermDepositPredictor.csproj.GenerateResource.cache
+C:\GitHub\Projects\BankMarketing\src\BankTermDepositPredictor\BankTermDepositPredictor\obj\Debug\BankTermDepositPredictor.csproj.CopyComplete
+C:\GitHub\Projects\BankMarketing\src\BankTermDepositPredictor\BankTermDepositPredictor\obj\Debug\BankTermDepositPredictor.exe
+C:\GitHub\Projects\BankMarketing\src\BankTermDepositPredictor\BankTermDepositPredictor\obj\Debug\BankTermDepositPredictor.pdb

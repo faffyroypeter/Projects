@@ -13,6 +13,6 @@ namespace BankTermDepositPredictor
         [JsonProperty("data")]
         // The service used by this example expects an array containing
         //   one or more arrays of doubles
-        internal double[,] data;
+        internal string[,] data;
     }
 }

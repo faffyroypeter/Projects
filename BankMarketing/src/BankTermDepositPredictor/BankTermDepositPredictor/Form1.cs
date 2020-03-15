@@ -25,32 +25,30 @@ namespace BankTermDepositPredictor
             // Set the data to be sent to the service.
             // In this case, we are sending two sets of data to be scored.
             InputData payload = new InputData();
-            payload.data = new double[,] {
-                {
-                    0.0199132141783263,
-                    0.0506801187398187,
-                    0.104808689473925,
-                    0.0700725447072635,
-                    -0.0359677812752396,
-                    -0.0266789028311707,
-                    -0.0249926566315915,
-                    -0.00259226199818282,
-                    0.00371173823343597,
-                    0.0403433716478807
-                },
-                {
-                    -0.0127796318808497,
-                    -0.044641636506989,
-                    0.0606183944448076,
-                    0.0528581912385822,
-                    0.0479653430750293,
-                    0.0293746718291555,
-                    -0.0176293810234174,
-                    0.0343088588777263,
-                    0.0702112981933102,
-                    0.00720651632920303
-                }
-            };
+            payload.data = new string[,] {
+                    {
+                    "57",
+                    "'technician'",
+                    "'married'",
+                    "'high.school'",
+                    "'no'",
+                    "'no'",
+                    "'yes'",
+                    "'cellular'",
+                    "'may'",
+                    "371",
+                    "1",
+                    "999",
+                    "1",
+                    "'failure'",
+                    "-1.8",
+                    "92.89299999999999",
+                    "-46.2",
+                    "1.2990000000000002",
+                    "5099.1"
+                    }
+               };
+          
 
             // Create the HTTP client
             HttpClient client = new HttpClient();
