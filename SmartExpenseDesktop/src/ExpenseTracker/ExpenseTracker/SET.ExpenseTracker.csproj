@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CA712DB0-3FE6-4EEA-BF1E-9A523235D63A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ExpenseTracker</RootNamespace>
-    <AssemblyName>ExpenseTracker</AssemblyName>
+    <RootNamespace>SET.ExpenseTracker</RootNamespace>
+    <AssemblyName>SET.ExpenseTracker</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -118,6 +118,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ExpenseManagementImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SET.BusinessEntity\SET.BusinessEntity.csproj">
+      <Project>{75a727ce-1206-4aa0-99a5-ad21b37cb09f}</Project>
+      <Name>SET.BusinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SET.BusinessLogic\SET.BusinessLogic.csproj">
+      <Project>{99571211-FFEA-4EF1-8181-37991BA55D8A}</Project>
+      <Name>SET.BusinessLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

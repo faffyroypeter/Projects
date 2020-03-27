@@ -1,0 +1,5 @@
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessEntity\bin\Debug\SET.BusinessEntity.dll
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessEntity\bin\Debug\SET.BusinessEntity.pdb
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessEntity\obj\Debug\SET.BusinessEntity.csprojAssemblyReference.cache
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessEntity\obj\Debug\SET.BusinessEntity.dll
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessEntity\obj\Debug\SET.BusinessEntity.pdb

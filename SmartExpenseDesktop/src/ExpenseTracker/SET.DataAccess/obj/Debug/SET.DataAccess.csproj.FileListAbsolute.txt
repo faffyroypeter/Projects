@@ -1,0 +1,8 @@
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.DataAccess\obj\Debug\SET.DataAccess.csprojAssemblyReference.cache
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.DataAccess\bin\Debug\SET.DataAccess.dll
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.DataAccess\bin\Debug\SET.DataAccess.pdb
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.DataAccess\bin\Debug\SET.BusinessEntity.dll
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.DataAccess\bin\Debug\SET.BusinessEntity.pdb
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.DataAccess\obj\Debug\SET.DataAccess.csproj.CopyComplete
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.DataAccess\obj\Debug\SET.DataAccess.dll
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.DataAccess\obj\Debug\SET.DataAccess.pdb

@@ -1,0 +1,10 @@
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessLogic\bin\Debug\SET.BusinessLogic.dll
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessLogic\bin\Debug\SET.BusinessLogic.pdb
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessLogic\obj\Debug\SET.BusinessLogic.dll
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessLogic\obj\Debug\SET.BusinessLogic.pdb
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessLogic\bin\Debug\SET.BusinessEntity.dll
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessLogic\bin\Debug\SET.DataAccess.dll
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessLogic\bin\Debug\SET.BusinessEntity.pdb
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessLogic\bin\Debug\SET.DataAccess.pdb
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessLogic\obj\Debug\SET.BusinessLogic.csprojAssemblyReference.cache
+C:\GitHub\Projects\SmartExpenseDesktop\src\ExpenseTracker\SET.BusinessLogic\obj\Debug\SET.BusinessLogic.csproj.CopyComplete

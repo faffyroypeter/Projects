@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ExpenseTracker")]
+[assembly: AssemblyTitle("SET.ExpenseTracker")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Aon")]
-[assembly: AssemblyProduct("ExpenseTracker")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SET.ExpenseTracker")]
 [assembly: AssemblyCopyright("Copyright © Aon 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

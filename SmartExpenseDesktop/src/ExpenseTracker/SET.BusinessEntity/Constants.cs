@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SET.BusinessLogic
+namespace SET.BusinessEntity
 {
-    public class Class1
+    public static class Constants
     {
+        public static int Default = -1;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace ExpenseTracker
+﻿namespace SET.ExpenseTracker
 {
     partial class frmExpenseReports
     {
