@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsGroupDataAccess.cs" />
     <Compile Include="clsUserDataAccess.cs" />
     <Compile Include="DbInstance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

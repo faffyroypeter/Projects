@@ -32,12 +32,12 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtGroupName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cboGroups = new System.Windows.Forms.ComboBox();
             this.chkUsers = new System.Windows.Forms.CheckedListBox();
+            this.cboGroups = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnMapUsers = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -51,6 +51,7 @@
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 
@@ -65,7 +66,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.groupBox1.Controls.Add(this.txtUserName);
+            this.groupBox1.Controls.Add(this.txtGroupName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(16, 16);
             this.groupBox1.Name = "groupBox1";
@@ -73,13 +74,13 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // txtUserName
+            // txtGroupName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(222, 40);
-            this.txtUserName.MaxLength = 100;
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(246, 22);
-            this.txtUserName.TabIndex = 2;
+            this.txtGroupName.Location = new System.Drawing.Point(222, 40);
+            this.txtGroupName.MaxLength = 100;
+            this.txtGroupName.Name = "txtGroupName";
+            this.txtGroupName.Size = new System.Drawing.Size(246, 22);
+            this.txtGroupName.TabIndex = 2;
             // 
             // label1
             // 
@@ -104,24 +105,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Map Users";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(51, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Group Name";
-            // 
-            // cboGroups
-            // 
-            this.cboGroups.FormattingEnabled = true;
-            this.cboGroups.Location = new System.Drawing.Point(219, 34);
-            this.cboGroups.Name = "cboGroups";
-            this.cboGroups.Size = new System.Drawing.Size(246, 24);
-            this.cboGroups.TabIndex = 2;
-            // 
             // chkUsers
             // 
             this.chkUsers.FormattingEnabled = true;
@@ -131,6 +114,25 @@
             this.chkUsers.Size = new System.Drawing.Size(410, 208);
             this.chkUsers.TabIndex = 3;
             this.chkUsers.ThreeDCheckBoxes = true;
+            // 
+            // cboGroups
+            // 
+            this.cboGroups.FormattingEnabled = true;
+            this.cboGroups.Location = new System.Drawing.Point(219, 34);
+            this.cboGroups.Name = "cboGroups";
+            this.cboGroups.Size = new System.Drawing.Size(246, 24);
+            this.cboGroups.TabIndex = 2;
+            this.cboGroups.SelectedIndexChanged += new System.EventHandler(this.cboGroups_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(51, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Group Name";
             // 
             // btnMapUsers
             // 
@@ -170,7 +172,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtGroupName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;

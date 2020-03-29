@@ -6,6 +6,7 @@
         Read,
         Update,
         Delete,
-        SelectAll
+        SelectAll,
+        FetchGroupMapping,
     }
 }

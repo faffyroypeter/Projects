@@ -31,9 +31,9 @@ namespace SET.ExpenseTracker
                         dgView.DataSource = new clsUserBusiness().FetchUsers();
                         break;
                     }
-
                 case FormActivity.Group:
                     {
+                        dgView.DataSource = new clsGroupBusiness().FetchGroupUsersMapping();
                         break;
                     }
                 case FormActivity.SplitExpense:
@@ -57,7 +57,8 @@ namespace SET.ExpenseTracker
         private void btnGroupManagement_Click(object sender, EventArgs e)
         {
             formActivity = FormActivity.Group;
-            new frmGroup().ShowDialog();
+            new frmGroup(Constants.Default).ShowDialog();
+            FillGrid();
         }
 
         private void btnExpenseManagement_Click(object sender, EventArgs e)
@@ -99,6 +100,7 @@ namespace SET.ExpenseTracker
                     }
                 case FormActivity.Group:
                     {
+                        new frmGroup(Constants.Default).ShowDialog();
                         break;
                     }
                 case FormActivity.SplitExpense:
@@ -125,6 +127,7 @@ namespace SET.ExpenseTracker
                     }
                 case FormActivity.Group:
                     {
+                        new frmGroup(Convert.ToInt32(RecordId)).ShowDialog();
                         break;
                     }
                 case FormActivity.SplitExpense:
@@ -147,11 +150,11 @@ namespace SET.ExpenseTracker
                 case FormActivity.User:
                     {
                         dgView.DataSource = new clsUserBusiness().DeleteUser(Convert.ToInt32(RecordId));
-
                         break;
                     }
                 case FormActivity.Group:
                     {
+                        dgView.DataSource = new clsGroupBusiness().DeleteGroup(Convert.ToInt32(RecordId));
                         break;
                     }
                 case FormActivity.SplitExpense:
