@@ -38,6 +38,7 @@ namespace SET.ExpenseTracker
                     }
                 case FormActivity.SplitExpense:
                     {
+                        dgView.DataSource = new clsExpenseBusiness().FetchAllExpense();
                         break;
                     }
                 case FormActivity.ExenseReports:
@@ -64,7 +65,8 @@ namespace SET.ExpenseTracker
         private void btnExpenseManagement_Click(object sender, EventArgs e)
         {
             formActivity = FormActivity.SplitExpense;
-            new frmSplitExpense().ShowDialog();
+            new frmSplitExpense(Constants.Default).ShowDialog();
+            FillGrid();
         }
 
         private void btnExpenseReports_Click(object sender, EventArgs e)
@@ -105,6 +107,7 @@ namespace SET.ExpenseTracker
                     }
                 case FormActivity.SplitExpense:
                     {
+                        new frmSplitExpense(Constants.Default).ShowDialog();
                         break;
                     }
                 case FormActivity.ExenseReports:
@@ -132,6 +135,7 @@ namespace SET.ExpenseTracker
                     }
                 case FormActivity.SplitExpense:
                     {
+                        new frmSplitExpense(Convert.ToInt32(RecordId)).ShowDialog();
                         break;
                     }
                 case FormActivity.ExenseReports:
@@ -159,6 +163,7 @@ namespace SET.ExpenseTracker
                     }
                 case FormActivity.SplitExpense:
                     {
+                        dgView.DataSource = new clsExpenseBusiness().DeleteExpense(Convert.ToInt32(RecordId));
                         break;
                     }
                 case FormActivity.ExenseReports:

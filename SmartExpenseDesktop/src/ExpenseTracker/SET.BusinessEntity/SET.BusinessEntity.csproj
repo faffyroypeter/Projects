@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsGroup.cs" />
+    <Compile Include="clsExpense.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="EnumCRUD.cs" />
