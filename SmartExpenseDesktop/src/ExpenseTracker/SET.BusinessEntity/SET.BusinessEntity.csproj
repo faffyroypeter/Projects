@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsSplitExpense.cs" />
     <Compile Include="clsGroup.cs" />
     <Compile Include="clsExpense.cs" />
     <Compile Include="clsUser.cs" />

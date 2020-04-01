@@ -16,15 +16,18 @@ namespace SET.ExpenseTracker
     {
         private clsExpenseBusiness objExpenseBusiness = new clsExpenseBusiness();
         private string RecordId { get; set; }
+        private int GroupIdValue { get; set; }
+        public int ExpenseIdValue { get; set; }
 
-        public int ExpenseId { get; set; }
+        public DataTable dtSplitDetails { get; set; }
 
         public frmSplitExpense(int expenseId)
         {
             InitializeComponent();
 
-            this.ExpenseId = expenseId;
+            this.ExpenseIdValue = expenseId;
             FillGroups();
+            FillUsers();
             FillExpenseHistory();
             FillEditableRecord(expenseId);
         }
@@ -34,6 +37,7 @@ namespace SET.ExpenseTracker
             if (expenseId != Constants.Default)
             {
                 DataTable dtExpense = objExpenseBusiness.FetchExpense(expenseId);
+
                 if (dtExpense?.Rows?.Count > 0)
                 {
                     dtTransactionDatePicker.Text = dtExpense.Rows[0]["TransactionDate"].ToString();
@@ -48,7 +52,8 @@ namespace SET.ExpenseTracker
 
         private void txtAmount_TextChanged(object sender, EventArgs e)
         {
-            // Split the amount based on default selection
+
+
         }
 
         private void rdoCustomSplitPercentage_CheckedChanged(object sender, EventArgs e)
@@ -80,21 +85,41 @@ namespace SET.ExpenseTracker
             }
         }
 
+        private void FillUsers()
+        {
+            GroupIdValue = Convert.ToInt32(((DataRowView)cboGroups.SelectedItem).Row[0]);
+
+            var dtUsers = new clsGroupBusiness().FetchGroupUsers(GroupIdValue);
+
+            if (dtUsers.Rows.Count == 0)
+            {
+                return;
+            }
+
+            ((ListBox)chkUsers).DataSource = dtUsers;
+            ((ListBox)chkUsers).DisplayMember = "Name";
+            ((ListBox)chkUsers).ValueMember = "UserId";
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var GroupId = Convert.ToInt32(((DataRowView)cboGroups.SelectedItem).Row[0]);
+            GroupIdValue = Convert.ToInt32(((DataRowView)cboGroups.SelectedItem).Row[0]);
 
             clsExpense objExpense = new clsExpense()
             {
-                ExpenseId = this.ExpenseId,
-                GroupId = GroupId,
+                ExpenseId = this.ExpenseIdValue,
+                GroupId = GroupIdValue,
                 Description = txtExpenseDesc.Text.Trim(),
                 Amount = Convert.ToDecimal("0" + txtAmount.Text.Trim()),
                 TransactionDate = DateTime.Parse(dtTransactionDatePicker.Text)
             };
 
-            if (objExpenseBusiness.SaveExpense(objExpense) > 0)
+            ExpenseIdValue = objExpenseBusiness.SaveExpense(objExpense);
+
+            if (ExpenseIdValue > 0)
             {
+                // Save Split Details
+
                 MessageBox.Show("Expense Saved");
             }
             else
@@ -137,6 +162,48 @@ namespace SET.ExpenseTracker
             dtTransactionDatePicker.Value = DateTime.Today;
             txtExpenseDesc.Text = string.Empty;
             txtAmount.Text = string.Empty;
+        }
+
+        private void btnSplit_Click(object sender, EventArgs e)
+        {
+            dgSplit.DataSource = null;
+            var dtTemp = dtSplitDetails.Clone();
+
+            int rowsCount = chkUsers.CheckedItems.Count;
+            decimal amountProcessed = Convert.ToDecimal("0" + txtAmount.Text.Trim());
+            decimal percentage = 0;
+
+            if (rowsCount > 0)
+            {
+                percentage = 100 / rowsCount;
+            }
+
+            foreach (var item in chkUsers.CheckedItems)
+            {
+                var userId = ((DataRowView)item).Row[chkUsers.ValueMember];
+                var dr = dtTemp.NewRow();
+
+                dr["ExpenseId"] = "-1";
+                dr["Amount"] = decimal.Parse("0" + txtAmount.Text.Trim());
+                dr["Description"] = txtExpenseDesc.Text.Trim();
+                dr["TransactionDate"] = DateTime.Parse(dtTransactionDatePicker.Text);
+                dr["SplitId"] = "-1";
+                dr["GroupId"] = GroupIdValue;
+                dr["UserId"] = userId;
+                dr["SplitAmount"] = Math.Round(amountProcessed / rowsCount, 2);
+                dr["SplitPercentage"] = percentage;
+
+                dtTemp.Rows.Add(dr);
+            }
+
+            dgSplit.DataSource = dtTemp;
+        }
+
+        private void txtAmount_Leave(object sender, EventArgs e)
+        {
+            GroupIdValue = Convert.ToInt32(((DataRowView)cboGroups.SelectedItem).Row[0]);
+            dtSplitDetails = new clsSplitExpenseBusiness().FetchSplitExpense(ExpenseIdValue);
+            dgSplit.DataSource = dtSplitDetails;
         }
     }
 }

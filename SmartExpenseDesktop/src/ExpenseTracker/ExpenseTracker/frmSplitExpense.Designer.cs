@@ -32,9 +32,10 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdoSplitByAmount = new System.Windows.Forms.RadioButton();
-            this.rdoCustomSplitPercentage = new System.Windows.Forms.RadioButton();
-            this.rdoEqualSplit = new System.Windows.Forms.RadioButton();
+            this.btnSplit = new System.Windows.Forms.Button();
+            this.chkUsers = new System.Windows.Forms.CheckedListBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.dgAllExpense = new System.Windows.Forms.DataGridView();
             this.cboGroups = new System.Windows.Forms.ComboBox();
             this.dtTransactionDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -45,8 +46,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.ExpenseId = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.SplitId = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.GroupId = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SplitAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SplitPercentage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAllExpense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSplit)).BeginInit();
@@ -54,7 +59,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(191, 459);
+            this.btnClear.Location = new System.Drawing.Point(608, 617);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(120, 41);
             this.btnClear.TabIndex = 5;
@@ -64,7 +69,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(316, 459);
+            this.btnSave.Location = new System.Drawing.Point(734, 617);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 41);
             this.btnSave.TabIndex = 4;
@@ -75,11 +80,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.groupBox1.Controls.Add(this.btnSplit);
+            this.groupBox1.Controls.Add(this.chkUsers);
             this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.btnDelete);
-            this.groupBox1.Controls.Add(this.rdoSplitByAmount);
-            this.groupBox1.Controls.Add(this.rdoCustomSplitPercentage);
-            this.groupBox1.Controls.Add(this.rdoEqualSplit);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.dgAllExpense);
@@ -94,52 +98,60 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1024, 519);
+            this.groupBox1.Size = new System.Drawing.Size(1684, 701);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // rdoSplitByAmount
+            // btnSplit
             // 
-            this.rdoSplitByAmount.AutoSize = true;
-            this.rdoSplitByAmount.Location = new System.Drawing.Point(308, 218);
-            this.rdoSplitByAmount.Name = "rdoSplitByAmount";
-            this.rdoSplitByAmount.Size = new System.Drawing.Size(127, 21);
-            this.rdoSplitByAmount.TabIndex = 17;
-            this.rdoSplitByAmount.Text = "Split by Amount";
-            this.rdoSplitByAmount.UseVisualStyleBackColor = true;
-            this.rdoSplitByAmount.CheckedChanged += new System.EventHandler(this.rdoSplitByAmount_CheckedChanged);
+            this.btnSplit.Location = new System.Drawing.Point(788, 239);
+            this.btnSplit.Name = "btnSplit";
+            this.btnSplit.Size = new System.Drawing.Size(66, 41);
+            this.btnSplit.TabIndex = 21;
+            this.btnSplit.Text = "Split";
+            this.btnSplit.UseVisualStyleBackColor = true;
+            this.btnSplit.Click += new System.EventHandler(this.btnSplit_Click);
             // 
-            // rdoCustomSplitPercentage
+            // chkUsers
             // 
-            this.rdoCustomSplitPercentage.AutoSize = true;
-            this.rdoCustomSplitPercentage.Location = new System.Drawing.Point(184, 218);
-            this.rdoCustomSplitPercentage.Name = "rdoCustomSplitPercentage";
-            this.rdoCustomSplitPercentage.Size = new System.Drawing.Size(91, 21);
-            this.rdoCustomSplitPercentage.TabIndex = 16;
-            this.rdoCustomSplitPercentage.Text = "Split by %";
-            this.rdoCustomSplitPercentage.UseVisualStyleBackColor = true;
-            this.rdoCustomSplitPercentage.CheckedChanged += new System.EventHandler(this.rdoCustomSplitPercentage_CheckedChanged);
+            this.chkUsers.FormattingEnabled = true;
+            this.chkUsers.Location = new System.Drawing.Point(629, 127);
+            this.chkUsers.MultiColumn = true;
+            this.chkUsers.Name = "chkUsers";
+            this.chkUsers.Size = new System.Drawing.Size(225, 106);
+            this.chkUsers.TabIndex = 20;
+            this.chkUsers.ThreeDCheckBoxes = true;
             // 
-            // rdoEqualSplit
+            // btnRefresh
             // 
-            this.rdoEqualSplit.AutoSize = true;
-            this.rdoEqualSplit.Checked = true;
-            this.rdoEqualSplit.Location = new System.Drawing.Point(45, 218);
-            this.rdoEqualSplit.Name = "rdoEqualSplit";
-            this.rdoEqualSplit.Size = new System.Drawing.Size(106, 21);
-            this.rdoEqualSplit.TabIndex = 15;
-            this.rdoEqualSplit.TabStop = true;
-            this.rdoEqualSplit.Text = "Split Equally";
-            this.rdoEqualSplit.UseVisualStyleBackColor = true;
+            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefresh.Location = new System.Drawing.Point(1556, 608);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(58, 58);
+            this.btnRefresh.TabIndex = 19;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.Location = new System.Drawing.Point(1620, 604);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(58, 58);
+            this.btnDelete.TabIndex = 18;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // dgAllExpense
             // 
             this.dgAllExpense.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAllExpense.Location = new System.Drawing.Point(472, 21);
+            this.dgAllExpense.Location = new System.Drawing.Point(880, 10);
             this.dgAllExpense.Name = "dgAllExpense";
             this.dgAllExpense.RowHeadersWidth = 51;
             this.dgAllExpense.RowTemplate.Height = 24;
-            this.dgAllExpense.Size = new System.Drawing.Size(530, 432);
+            this.dgAllExpense.Size = new System.Drawing.Size(798, 588);
             this.dgAllExpense.TabIndex = 14;
             this.dgAllExpense.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAllExpense_CellClick);
             // 
@@ -160,26 +172,38 @@
             // 
             // dgSplit
             // 
+            this.dgSplit.AllowUserToResizeColumns = false;
+            this.dgSplit.AllowUserToResizeRows = false;
             this.dgSplit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSplit.Location = new System.Drawing.Point(41, 249);
+            this.dgSplit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ExpenseId,
+            this.SplitId,
+            this.GroupId,
+            this.UserId,
+            this.SplitAmount,
+            this.SplitPercentage});
+            this.dgSplit.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgSplit.Location = new System.Drawing.Point(45, 286);
+            this.dgSplit.MultiSelect = false;
             this.dgSplit.Name = "dgSplit";
             this.dgSplit.RowHeadersWidth = 51;
             this.dgSplit.RowTemplate.Height = 24;
-            this.dgSplit.Size = new System.Drawing.Size(392, 204);
+            this.dgSplit.Size = new System.Drawing.Size(809, 325);
             this.dgSplit.TabIndex = 11;
+            this.dgSplit.TabStop = false;
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(208, 181);
+            this.txtAmount.Location = new System.Drawing.Point(629, 99);
             this.txtAmount.MaxLength = 100;
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(225, 22);
             this.txtAmount.TabIndex = 9;
-            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
+            this.txtAmount.Leave += new System.EventHandler(this.txtAmount_Leave);
             // 
             // txtExpenseDesc
             // 
-            this.txtExpenseDesc.Location = new System.Drawing.Point(208, 140);
+            this.txtExpenseDesc.Location = new System.Drawing.Point(629, 58);
             this.txtExpenseDesc.MaxLength = 100;
             this.txtExpenseDesc.Name = "txtExpenseDesc";
             this.txtExpenseDesc.Size = new System.Drawing.Size(225, 22);
@@ -199,7 +223,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 182);
+            this.label3.Location = new System.Drawing.Point(472, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 20);
             this.label3.TabIndex = 4;
@@ -209,7 +233,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 139);
+            this.label2.Location = new System.Drawing.Point(472, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 3;
@@ -225,33 +249,65 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Group Name";
             // 
-            // btnRefresh
+            // ExpenseId
             // 
-            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
-            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefresh.Location = new System.Drawing.Point(880, 461);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(58, 58);
-            this.btnRefresh.TabIndex = 19;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.ExpenseId.DataPropertyName = "ExpenseId";
+            this.ExpenseId.HeaderText = "ExpenseId";
+            this.ExpenseId.MinimumWidth = 6;
+            this.ExpenseId.Name = "ExpenseId";
+            this.ExpenseId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ExpenseId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ExpenseId.Width = 125;
             // 
-            // btnDelete
+            // SplitId
             // 
-            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
-            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelete.Location = new System.Drawing.Point(944, 459);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(58, 58);
-            this.btnDelete.TabIndex = 18;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.SplitId.DataPropertyName = "SplitId";
+            this.SplitId.HeaderText = "SplitId";
+            this.SplitId.MinimumWidth = 6;
+            this.SplitId.Name = "SplitId";
+            this.SplitId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SplitId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.SplitId.Width = 125;
+            // 
+            // GroupId
+            // 
+            this.GroupId.DataPropertyName = "GroupId";
+            this.GroupId.HeaderText = "GroupId";
+            this.GroupId.MinimumWidth = 6;
+            this.GroupId.Name = "GroupId";
+            this.GroupId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.GroupId.Width = 125;
+            // 
+            // UserId
+            // 
+            this.UserId.DataPropertyName = "UserId";
+            this.UserId.HeaderText = "UserId";
+            this.UserId.MinimumWidth = 6;
+            this.UserId.Name = "UserId";
+            this.UserId.Width = 125;
+            // 
+            // SplitAmount
+            // 
+            this.SplitAmount.DataPropertyName = "SplitAmount";
+            this.SplitAmount.HeaderText = "SplitAmount";
+            this.SplitAmount.MinimumWidth = 6;
+            this.SplitAmount.Name = "SplitAmount";
+            this.SplitAmount.Width = 125;
+            // 
+            // SplitPercentage
+            // 
+            this.SplitPercentage.DataPropertyName = "SplitPercentage";
+            this.SplitPercentage.HeaderText = "SplitPercentage";
+            this.SplitPercentage.MinimumWidth = 6;
+            this.SplitPercentage.Name = "SplitPercentage";
+            this.SplitPercentage.Width = 125;
             // 
             // frmSplitExpense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 543);
+            this.ClientSize = new System.Drawing.Size(1708, 725);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSplitExpense";
@@ -280,10 +336,15 @@
         private System.Windows.Forms.DateTimePicker dtTransactionDatePicker;
         private System.Windows.Forms.ComboBox cboGroups;
         private System.Windows.Forms.DataGridView dgAllExpense;
-        private System.Windows.Forms.RadioButton rdoCustomSplitPercentage;
-        private System.Windows.Forms.RadioButton rdoEqualSplit;
-        private System.Windows.Forms.RadioButton rdoSplitByAmount;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.CheckedListBox chkUsers;
+        private System.Windows.Forms.Button btnSplit;
+        private System.Windows.Forms.DataGridViewLinkColumn ExpenseId;
+        private System.Windows.Forms.DataGridViewLinkColumn SplitId;
+        private System.Windows.Forms.DataGridViewLinkColumn GroupId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SplitAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SplitPercentage;
     }
 }
