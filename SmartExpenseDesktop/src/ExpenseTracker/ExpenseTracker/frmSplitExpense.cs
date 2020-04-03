@@ -111,15 +111,14 @@ namespace SET.ExpenseTracker
                 GroupId = GroupIdValue,
                 Description = txtExpenseDesc.Text.Trim(),
                 Amount = Convert.ToDecimal("0" + txtAmount.Text.Trim()),
-                TransactionDate = DateTime.Parse(dtTransactionDatePicker.Text)
+                TransactionDate = DateTime.Parse(dtTransactionDatePicker.Text),
+                TblSplitDetails = (DataTable)dgSplit.DataSource
+
             };
 
-            ExpenseIdValue = objExpenseBusiness.SaveExpense(objExpense);
-
-            if (ExpenseIdValue > 0)
+            if (objExpenseBusiness.SaveExpense(objExpense) > 0)
             {
                 // Save Split Details
-
                 MessageBox.Show("Expense Saved");
             }
             else
@@ -184,14 +183,12 @@ namespace SET.ExpenseTracker
                 var dr = dtTemp.NewRow();
 
                 dr["ExpenseId"] = "-1";
-                dr["Amount"] = decimal.Parse("0" + txtAmount.Text.Trim());
-                dr["Description"] = txtExpenseDesc.Text.Trim();
-                dr["TransactionDate"] = DateTime.Parse(dtTransactionDatePicker.Text);
                 dr["SplitId"] = "-1";
                 dr["GroupId"] = GroupIdValue;
                 dr["UserId"] = userId;
                 dr["SplitAmount"] = Math.Round(amountProcessed / rowsCount, 2);
                 dr["SplitPercentage"] = percentage;
+                dr["PaidAmount"] = 0.00;
 
                 dtTemp.Rows.Add(dr);
             }
@@ -203,7 +200,6 @@ namespace SET.ExpenseTracker
         {
             GroupIdValue = Convert.ToInt32(((DataRowView)cboGroups.SelectedItem).Row[0]);
             dtSplitDetails = new clsSplitExpenseBusiness().FetchSplitExpense(ExpenseIdValue);
-            dgSplit.DataSource = dtSplitDetails;
         }
     }
 }

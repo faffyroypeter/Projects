@@ -31,6 +31,11 @@ namespace SET.DataAccess
                         sqlCmd.Parameters.AddWithValue("@Description", expense.Description);
                         sqlCmd.Parameters.AddWithValue("@TransactionDate", expense.TransactionDate);
                         sqlCmd.Parameters.AddWithValue("@Amount", expense.Amount);
+
+                        var param = new SqlParameter("@ExpenseTblType", SqlDbType.Structured);
+                        param.Value = expense.TblSplitDetails;
+
+                        sqlCmd.Parameters.Add(param);
                         
                         return sqlCmd.ExecuteNonQuery();
                     }

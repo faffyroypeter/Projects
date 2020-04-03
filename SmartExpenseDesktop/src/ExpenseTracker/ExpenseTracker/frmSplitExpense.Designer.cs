@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSplitExpense));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,12 +47,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ExpenseId = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.SplitId = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.GroupId = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.ExpenseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SplitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SplitAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SplitPercentage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaidAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAllExpense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSplit)).BeginInit();
@@ -172,6 +174,8 @@
             // 
             // dgSplit
             // 
+            this.dgSplit.AllowUserToAddRows = false;
+            this.dgSplit.AllowUserToDeleteRows = false;
             this.dgSplit.AllowUserToResizeColumns = false;
             this.dgSplit.AllowUserToResizeRows = false;
             this.dgSplit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -181,16 +185,18 @@
             this.GroupId,
             this.UserId,
             this.SplitAmount,
-            this.SplitPercentage});
-            this.dgSplit.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.SplitPercentage,
+            this.PaidAmount});
+            this.dgSplit.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgSplit.Location = new System.Drawing.Point(45, 286);
             this.dgSplit.MultiSelect = false;
             this.dgSplit.Name = "dgSplit";
             this.dgSplit.RowHeadersWidth = 51;
             this.dgSplit.RowTemplate.Height = 24;
+            this.dgSplit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgSplit.Size = new System.Drawing.Size(809, 325);
+            this.dgSplit.StandardTab = true;
             this.dgSplit.TabIndex = 11;
-            this.dgSplit.TabStop = false;
             // 
             // txtAmount
             // 
@@ -255,8 +261,8 @@
             this.ExpenseId.HeaderText = "ExpenseId";
             this.ExpenseId.MinimumWidth = 6;
             this.ExpenseId.Name = "ExpenseId";
+            this.ExpenseId.ReadOnly = true;
             this.ExpenseId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ExpenseId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ExpenseId.Width = 125;
             // 
             // SplitId
@@ -265,8 +271,8 @@
             this.SplitId.HeaderText = "SplitId";
             this.SplitId.MinimumWidth = 6;
             this.SplitId.Name = "SplitId";
+            this.SplitId.ReadOnly = true;
             this.SplitId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SplitId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.SplitId.Width = 125;
             // 
             // GroupId
@@ -275,8 +281,8 @@
             this.GroupId.HeaderText = "GroupId";
             this.GroupId.MinimumWidth = 6;
             this.GroupId.Name = "GroupId";
+            this.GroupId.ReadOnly = true;
             this.GroupId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.GroupId.Width = 125;
             // 
             // UserId
@@ -285,6 +291,7 @@
             this.UserId.HeaderText = "UserId";
             this.UserId.MinimumWidth = 6;
             this.UserId.Name = "UserId";
+            this.UserId.ReadOnly = true;
             this.UserId.Width = 125;
             // 
             // SplitAmount
@@ -293,6 +300,7 @@
             this.SplitAmount.HeaderText = "SplitAmount";
             this.SplitAmount.MinimumWidth = 6;
             this.SplitAmount.Name = "SplitAmount";
+            this.SplitAmount.ReadOnly = true;
             this.SplitAmount.Width = 125;
             // 
             // SplitPercentage
@@ -301,7 +309,22 @@
             this.SplitPercentage.HeaderText = "SplitPercentage";
             this.SplitPercentage.MinimumWidth = 6;
             this.SplitPercentage.Name = "SplitPercentage";
+            this.SplitPercentage.ReadOnly = true;
             this.SplitPercentage.Width = 125;
+            // 
+            // PaidAmount
+            // 
+            this.PaidAmount.DataPropertyName = "PaidAmount";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.PaidAmount.DefaultCellStyle = dataGridViewCellStyle1;
+            this.PaidAmount.HeaderText = "PaidAmount";
+            this.PaidAmount.MinimumWidth = 6;
+            this.PaidAmount.Name = "PaidAmount";
+            this.PaidAmount.Width = 125;
             // 
             // frmSplitExpense
             // 
@@ -340,11 +363,12 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.CheckedListBox chkUsers;
         private System.Windows.Forms.Button btnSplit;
-        private System.Windows.Forms.DataGridViewLinkColumn ExpenseId;
-        private System.Windows.Forms.DataGridViewLinkColumn SplitId;
-        private System.Windows.Forms.DataGridViewLinkColumn GroupId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExpenseId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SplitId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GroupId;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserId;
         private System.Windows.Forms.DataGridViewTextBoxColumn SplitAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn SplitPercentage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaidAmount;
     }
 }
